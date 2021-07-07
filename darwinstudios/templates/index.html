@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+    <section id="home">
+        <video alt="Darwin Studios" autoplay loop muted preload="auto" data-mobile-video>
+            <source type="video/mp4" src= "{% static 'img/darwin_presentacion.mp4' %}">
+            <source type="video/webm" src="img/darwin_presentacion.webm">
+        </video>           
+        <div id="textoSuperpuesto"><p>Spaces at the service of your story</p></div>            
+        <a href="#services" class="see-more"><p>See more</p><div class="fas fa-long-arrow-alt-down"></div></a>
+    </section>
+     <!-- Using dinamic components -->
+    <section id="services"> 
+        <div class="bajada">    
+            <h2>Services</h2>
+        </div>
+        <div class="grid">
+            <service-card
+                v-for="service in services"
+                    :title="service.title"   
+                    :content="service.content"         
+            ></service-card>
+        </div>                
+    </section>
+{% endblock %}

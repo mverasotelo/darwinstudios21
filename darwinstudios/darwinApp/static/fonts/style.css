@@ -1,0 +1,32 @@
+
+@font-face {
+    font-family: "Fogie-Medium";
+    src: url("../fonts/Fogie-Medium.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/Fogie-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url("../fonts/Fogie-Medium.svg") format("svg"), /* Legacy iOS */
+      url("../fonts/Fogie-Medium.woff") format("woff"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family:"Fogie-Light";
+    src: url("../fonts/Fogie-Light.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/Fogie-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url("../fonts/Fogie-Light.svg") format("svg"), /* Legacy iOS */
+      url("../fonts/Fogie-Light.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("../fonts/Fogie-Light.woff") format("woff"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family:"Fogie-LightItalic";
+    src: url("../fonts/Fogie-LightItalic.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/Fogie-LightItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url("../fonts/Fogie-LightItalic.svg") format("svg"), /* Legacy iOS */
+      url("../fonts/Fogie-LightItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("../fonts/Fogie-LightItalic.woff") format("woff"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
