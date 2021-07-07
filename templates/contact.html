@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Contact Us | {% endblock %}
+{% block main %}
+    <div class="contacto">
+        <section class="info">
+            <h4>CONTACT US</h4>
+            <p><a target=blank_ href="https://www.google.com.ar/maps/place/Darwin+Studios/@-34.5855648,-58.4455463,15z/data=!4m5!3m4!1s0x95bcb58cbad0b66f:0x6500ed544b3d4673!8m2!3d-34.5888237!4d-58.4368656">5350 NICETO VEGA ST. </a></p>
+            <p>PALERMO | BUENOS AIRES | ARGENTINA</p>
+            <p><a href="mailto:info@clubbar.com.ar?subject:Consulta">info@darwinstudios.com.ar</a></p>
+        </section>
+        <section class="formulario">
+            <form method="POST" action="">{% csrf_token %}
+                {{ formulario.as_table}}
+                <input type="submit" value="SEND">
+                <br>
+                <div>{{confirmation}}</div>
+            </form>
+        </section>
+    </div>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13138.941026736866!2d-58.4455463!3d-34.5855648!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb58cbad0b66f%3A0x6500ed544b3d4673!2sDarwin%20Studios!5e0!3m2!1ses-419!2sar!4v1611622143028!5m2!1ses-419!2sar" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>    </div>
+{% endblock %}

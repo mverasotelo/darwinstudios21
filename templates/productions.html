@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Productions | {% endblock %}
+{% block main %}
+    <section id="producciones">
+        <h1>PRODUCTIONS</h1>      
+        <div class="filter-by-venue">
+            <ul>
+            <li><a href="{% url 'Productions' 0 %}">ALL</a></li>
+            {% for v in venues %}
+                <li><a href="{% url 'Productions' v.venue_id %}"> {{ v.name }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="grid">
+        {% if productions %}
+            {% for p in productions %}
+            <div @click="loadMedia({{ p.prod_id }})" style="background-image:url('{% static p.imageUrl %}')" class="grid-elem">
+                <div class="filter"></div>
+                <div>
+                {{ p.name }}<br>
+                {% if p.artist %}
+                {{ p.artist }}
+                {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+            <div class="pop-up" v-show="popUp" v-cloak>
+                <div class="cuadro">
+                    <div id="contenidoTrabajo" v-html="contenidoTrabajo"></div>
+                    <div class="cerrarCuadro icon fas fa-times" @click="closeBox()" tabindex="0"></div>
+                    <div :class="next" @click="nextMedia()" tabindex="0"></div>
+                    <div :class="back" @click="previousMedia()" tabindex="0"></div>
+                </div>
+            </div>
+    </section>
+{% endblock %}

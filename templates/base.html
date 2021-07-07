@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}Darwin Studios</title>
+    <meta name="description" content="Darwin Studios es un salón de eventos y complejo de locaciones que surge de la reconversión de una fábrica antigua en pleno Palermo.">
+    <meta name="keywords" content="set, locación, jornada de filmación, rodaje, streaming, estudio, fotografía, estudio de tv, venue, darwin studios, darwin estudios">
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Solway:wght@700&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d71332221e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div>
+        <div v-show="show" id="loader" v-show="show"></div>
+        <header class="header">
+            <ul id="menuDesp" class="header-container">
+                <li><a href="{% url 'Home' %}"><img class="logo" src="{% static 'img/isoB.png'%}"></a></li>
+                <li>
+                    <i><a class="fab fa-instagram icon" href="https://www.instagram.com/darwin_studios/" target=_blank></a></i>
+                    <i id="menuIcon" class="icon fas fa-bars" :class="iconoMenu" @click="desplegarMenu"></i>
+                    <nav id="menu" :class="menuClass">
+                        <ul class="nav">
+                            <li><a href="{% url 'Venues' %}">VENUES</a></li>
+                            <li><a href="{% url 'Productions' 0 %}">PRODUCTIONS</a></li>
+                            <li><a href="{% url 'AboutUs' %}">ABOUT US</a></li>
+                            <li><a href="{% url 'ContactUs' %}">CONTACT US</a></li>
+                        </ul>
+                    </nav> 
+                </li>   
+            </ul>
+        </header>
+        <main>
+            <div id="whatsapp">
+                <div id="hablemos"> <a href="https://api.whatsapp.com/send?phone=+541111111111" target=_blank>Whatsapp</a></div>
+                <div id="logo-Whatsapp"> <a class="fab fa-whatsapp" href="https://api.whatsapp.com/send?phone=+541123456789" target=_blank></a></div>
+            </div>
+    {% block main %}    
+    {% endblock %}
+    </main>
+    <footer>
+        <div class="footercontainer">
+            <p><a target=blank_ href="https://www.google.com.ar/maps/place/Darwin+Studios/@-34.5855648,-58.4455463,15z/data=!4m5!3m4!1s0x95bcb58cbad0b66f:0x6500ed544b3d4673!8m2!3d-34.5888237!4d-58.4368656">5350 Niceto Vega St. </a>| Palermo | Buenos Aires | Argentina | <a href="mailto:info@clubbar.com.ar?subject:Consulta">info@darwinstudios.com.ar</a></a></p>
+            <p id="firma">Website developed by Mercedes Vera Sotelo</p>
+        </div>
+    </footer>
+</div>
+</body>
+<script src="{% static 'js/scripts.js' %}" async="async"></script>
+<script src="{% static 'js/vue.js' %}" async="async"></script>
+</html>

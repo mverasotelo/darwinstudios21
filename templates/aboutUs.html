@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About us | {% endblock %}
+{% block main %}
+    <div id="nosotros" class="fs-images">
+        <div class="textoNosotros">
+            <h2>About Us</h2>
+            <p>Darwin Studios is a complex of locations, events room, office space and private studios that arises from the reconversion of one of the oldest furniture factories in the City of Buenos Aires.</p>
+            <p>The original remodeling preserved the industrial spirit of the more than 7,000 m2 that the building has, located in the Audiovisual District of Palermo.</p>
+            <p>The complex offers a variety of spaces and facilities that make it a unique place.</p> 
+            <p>Warehouses with 9-meter-high ceilings and technical walkways with grills that favor assembly, factory-type windows, industrial facades, a spacious exterior that includes a cobblestone street, terraces, ramp to enter vehicles, professional kitchen, offices, warehouses, old stairs, forklift and engine room.</p>
+            <p>We work every day with the aim of facilitating access to our House for all content creators.</p>
+        </div>
+        <img src="{% static 'img/darwin_studios_nosotros.jpg' %}" alt="Nosotros">
+    </div>
+{% endblock %}

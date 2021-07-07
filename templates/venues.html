@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Venues | {% endblock %}
+{% block main %}
+<section id="explora" class="explora">
+    <div class="bajada">    
+        <h2>Explore</h2>
+        <h3>Darwin Studios is an old factory of more than 7,000 m² converted into a complex of locations, events room, office space and private studios in the Audiovisual District of Palermo.</h3>
+    </div>
+    <div class="grid">
+        {% if venues %}
+            {% for v in venues %}
+            <div @click="loadVenue({{ v.venue_id }})" style="background-image:url('{% static v.imageUrl %}')" class="grid-elem"><div class="filter"></div><div>{{ v.name }}</div></div>
+            {% endfor %}
+        {% endif %}
+            <div class="pop-up" v-show="popUp" v-cloak>
+            <div class="cuadro" scrolling="yes">
+                <div class="carrousel">
+                    <img v-bind:src="imagenEspacio" v-bind:alt="venueName" v-bind:title="venueName">
+                    <div :class="next" @click="pasarFoto()" tabindex="0"></div>
+                    <div :class="back" @click="retrocederFoto()" tabindex="0"></div>
+                </div>
+                <div class="texto">
+                    <h4>{[venueName]}</h4>
+                    <br>
+                    <p v-for="(val) in caracteristica">{[val]}</p>
+                    <p v-show="plano" class="plano"><a :href="planoHref" @click>Sketch</a></p>
+                </div>
+                    <div class="cerrarCuadro icon fas fa-times" @click="cerrarCuadro()" tabindex="0"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
