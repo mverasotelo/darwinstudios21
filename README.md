@@ -1,8 +1,8 @@
-#Darwin Studios
+# Darwin Studios
 
 My capstone for Harvard CS50 is a website for a recording studio, event room, office space and private studios in the City of Buenos Aires.
 
-####Distinctiveness and Complexity:
+#### Distinctiveness and Complexity:
 
 The website is fully responsive and allows users to view multimedia information about available venues and previous productions, to filter productions by venue and send a contact form.
 
